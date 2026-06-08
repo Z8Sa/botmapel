@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# File auth WhatsApp
+auth/
+*.creds.json
+
+# Environment variables
+.env
+
+# Database files (opsional, bisa upload atau tidak)
+ database.json
+ owners.json
+
+# Log files
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
