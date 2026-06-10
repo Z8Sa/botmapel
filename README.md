@@ -1,227 +1,320 @@
-========================================
-  CLASS KNOWLEDGE BOT - SMK TKJ
-========================================
+# 🎓 Class Knowledge Bot - SMK TKJ
 
-Bot WhatsApp untuk materi & tugas
-sekolah dengan AI + gambar.
+Bot WhatsApp untuk menyimpan materi dan tugas sekolah dengan dukungan AI, pencarian database, serta manajemen owner.
 
-========================================
-FITUR
-========================================
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![WhatsApp](https://img.shields.io/badge/WhatsApp-Baileys-brightgreen)
+![AI](https://img.shields.io/badge/AI-Groq-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-+ Manajemen Materi & Tugas
-+ Tampilan Gambar (Canvas)
-+ AI Assistant (Groq Llama)
-+ Pencarian Database
-+ Penyimpanan Permanen (JSON)
-+ Multi Owner Support
-+ Mode Owner & User Berbeda
+---
 
-========================================
-MATA PELAJARAN
-========================================
+## ✨ Fitur
 
-Semester 1 & 2:
+* 📚 Manajemen Materi per Semester
+* 📝 Manajemen Tugas per Semester
+* 🤖 AI Assistant menggunakan Groq
+* 🔍 Pencarian Materi & Tugas
+* 🖼️ Tampilan Gambar (Canvas)
+* 💾 Penyimpanan Data JSON
+* 👥 Multi Owner Support
+* 🔐 Pemisahan Hak Akses Owner & User
 
-- Informatika
-- Matematika
-- B.Indonesia
-- B.Inggris
-- IPAS
-- TKJ
-- Sejarah
-- Tahfidz
-- Database
-- PAI
-- PJOK
-- PPKn
+---
 
-========================================
-PERSYARATAN
-========================================
+## 📖 Mata Pelajaran
 
-1. Node.js v18 atau lebih baru
-2. NPM v9 atau lebih baru
-3. Akun Groq (untuk API Key)
+### Semester 1 & Semester 2
 
-========================================
-CARA INSTALL
-========================================
+* Informatika
+* Matematika
+* Bahasa Indonesia
+* Bahasa Inggris
+* IPAS
+* TKJ
+* Sejarah
+* Tahfidz
+* Database
+* PAI
+* PJOK
+* PPKn
 
-1. Clone repository:
-   git clone https://github.com/Z8Sa/botmapel.git
-   cd botmapel
+---
 
-2. Install dependencies:
-   npm install
+## ⚙️ Persyaratan
 
-3. Buat file .env:
-   GROQ_API_KEY=gsk_xxxxx
+* Node.js v18+
+* NPM v9+
+* API Key Groq
 
-   (Dapatkan API Key di console.groq.com)
+---
 
-4. Jalankan bot:
-   node index.js
+## 🚀 Instalasi
 
-5. Scan QR Code yang muncul
-   menggunakan WhatsApp
+### Clone Repository
 
-========================================
-PANDUAN PERINTAH
-========================================
+```bash
+git clone https://github.com/Z8Sa/botmapel.git
+cd botmapel
+```
 
-PERINTAH UNTUK SEMUA USER:
+### Install Dependency
 
-.menu              - Tampilkan menu bantuan
-.semester1         - Lihat semua mapel S1
-.semester2         - Lihat semua mapel S2
-.semester1 tkj     - Detail TKJ semester 1
-.semester2 tkj     - Detail TKJ semester 2
-.img tkj semester1 - Tampil gambar materi
-.caridb jaringan   - Cari kata di database
-.tanya subnetting  - Tanya AI (bisa akses DB)
-.cekjid            - Lihat JID WhatsApp Anda
+```bash
+npm install
+```
 
-PERINTAH KHUSUS OWNER:
+### Buat File .env
 
-.+materis1 tkj x   - Tambah materi S1
-.+materis2 tkj x   - Tambah materi S2
-.+tugass1 tkj x    - Tambah tugas S1
-.+tugass2 tkj x    - Tambah tugas S2
-.-materis1 tkj 1   - Hapus materi S1
-.-materis2 tkj 1   - Hapus materi S2
-.addowner <JID>    - Tambah owner baru
-.removeowner <JID> - Hapus owner
-.listowner         - Lihat daftar owner
+```env
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxx
+```
 
-CONTOH PENGGUNAAN AI:
+Dapatkan API Key dari:
 
+https://console.groq.com
+
+### Jalankan Bot
+
+```bash
+node index.js
+```
+
+### Hubungkan WhatsApp
+
+Scan QR Code yang muncul di terminal menggunakan WhatsApp.
+
+---
+
+## 📋 Perintah User
+
+| Command              | Deskripsi              |
+| -------------------- | ---------------------- |
+| `.menu`              | Tampilkan menu         |
+| `.semester1`         | Lihat mapel semester 1 |
+| `.semester2`         | Lihat mapel semester 2 |
+| `.semester1 tkj`     | Detail TKJ semester 1  |
+| `.semester2 tkj`     | Detail TKJ semester 2  |
+| `.img tkj semester1` | Tampilan gambar        |
+| `.caridb jaringan`   | Cari data              |
+| `.tanya subnetting`  | Tanya AI               |
+| `.cekjid`            | Lihat JID WhatsApp     |
+
+---
+
+## 🔑 Perintah Owner
+
+### Tambah Materi
+
+```txt
+.+materis1 tkj subnetting dasar
+.+materis2 tkj routing dasar
+```
+
+### Tambah Tugas
+
+```txt
+.+tugass1 tkj laporan jaringan
+.+tugass2 tkj konfigurasi router
+```
+
+### Hapus Materi
+
+```txt
+.-materis1 tkj 1
+.-materis2 tkj 1
+```
+
+### Kelola Owner
+
+```txt
+.addowner <JID>
+.removeowner <JID>
+.listowner
+```
+
+---
+
+## 🤖 Contoh AI
+
+```txt
 .tanya apa itu subnetting?
 .tanya materi TKJ semester 1?
 .tanya ada tugas tentang jaringan?
 .tanya jelaskan tentang database
+```
 
-========================================
-CARA MENJADI OWNER
-========================================
+AI dapat menjawab berdasarkan data yang tersimpan di database bot.
 
-1. Kirim .cekjid ke bot (chat pribadi)
-2. Copy JID yang muncul (contoh:
-   6281234567890@s.whatsapp.net)
-3. Minta owner saat ini mengetik:
-   .addowner 6281234567890@s.whatsapp.net
+---
 
-Atau jika belum ada owner:
+## 👥 Cara Menjadi Owner
 
-1. Kirim .cekjid ke bot
-2. Ketik .addowner <JID_anda>
-   (JID yang muncul dari .cekjid)
+### Langkah 1
 
-========================================
-STRUKTUR FOLDER
-========================================
+Kirim:
 
-botmapel/
-├── index.js          # File utama bot
-├── database.json     # DB materi & tugas
-├── owners.json       # Daftar owner
-├── auth/             # Auth WhatsApp
-├── package.json      # Dependencies
-├── .env              # API Key
-└── README.md         # Dokumentasi
+```txt
+.cekjid
+```
 
-========================================
-TEKNOLOGI
-========================================
+Contoh hasil:
 
-- Baileys      - WhatsApp Web Library
-- Groq API     - AI Llama 3.3 70B
-- Canvas       - Generate gambar
-- Axios        - HTTP client
-- Pino         - Logger
-- QRCode Terminal - QR generator
+```txt
+120363408589182654@g.us # jid grub
+92879288541305@lid # jid pribadi
+```
 
-========================================
-TROUBLESHOOTING
-========================================
+### Langkah 2
 
-ERROR: Cannot find module 'canvas'
+Owner saat ini menjalankan:
+
+```txt
+.addowner 120363408589182654@g.us
+```
+
+---
+
+## 📂 Struktur Project
+
+```txt
+botmateri/
+├── auth/
+├── src/
+│   ├── config/
+│   │   └── constants.js
+│   ├── database/
+│   │   └── Database.js
+│   ├── services/
+│   │   ├── AIService.js
+│   │   └── ImageGenerator.js
+│   ├── handlers/
+│   │   ├── CommandHandler.js
+│   │   └── OwnerHandler.js
+│   ├── utils/
+│   │   └── helpers.js
+│   └── Bot.js
+├── database.json
+├── owners.json
+├── .env
+├── .env.example
+└── index.js
+```
+
+---
+
+## 🛠️ Teknologi
+
+| Teknologi       | Fungsi          |
+| --------------- | --------------- |
+| Baileys         | WhatsApp API    |
+| Groq API        | AI Assistant    |
+| Canvas          | Generate Gambar |
+| Axios           | HTTP Request    |
+| Pino            | Logging         |
+| QRCode Terminal | QR Scanner      |
+
+---
+
+## 🐞 Troubleshooting
+
+### Canvas Gagal Install
 
 Windows:
-  npm install canvas
 
-Linux (Ubuntu/Debian):
-  sudo apt-get install build-essential
-  libcairo2-dev libpango1.0-dev
-  libjpeg-dev libgif-dev
-  npm install canvas
+```bash
+npm install canvas
+```
 
-ERROR: Unexpected end of JSON input
+Ubuntu / Debian:
 
-Hapus file database.json:
-  del database.json (Windows)
-  rm database.json (Linux/Mac)
+```bash
+sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev
+npm install canvas
+```
 
-ERROR: AI Error 400 / model decommissioned
+---
 
-1. Pastikan GROQ_API_KEY valid
-2. Cek model di console.groq.com
-3. Update model di file index.js
-   (ganti "llama-3.3-70b-versatile")
+### Database Rusak
 
-ERROR: Owner tidak terdeteksi
+Hapus:
 
-1. Kirim .cekjid untuk lihat JID
-2. Pastikan JID cocok dengan owners.json
-3. Hapus owners.json dan daftar ulang
+```txt
+database.json
+```
 
-========================================
-CATATAN PENTING
-========================================
+Bot akan membuat ulang otomatis.
 
-- Bot hanya merespon pesan diawali titik (.)
-- Data tersimpan permanen di database.json
-- Bot tetap berjalan meskipun AI error
-- Support WhatsApp multi-device
-- Gunakan .cekjid untuk cek JID sendiri
-- Owner bisa dikelola via .addowner/.removeowner
+---
 
-========================================
-BACKUP & RESTORE
-========================================
+### AI Error
 
-Backup database:
-  copy database.json backup_db.json
-  copy owners.json backup_owners.json
+Pastikan:
 
-Restore database:
-  copy backup_db.json database.json
-  copy backup_owners.json owners.json
+* API Key valid
+* Kuota Groq tersedia
+* Model masih aktif
 
-========================================
-UPDATE TERBARU
-========================================
+---
 
-- Perbaikan AI model ke llama-3.3-70b
-- Penambahan fitur multi owner
-- Perbaikan penyimpanan owner permanen
-- Menu lebih rapi dengan struktur tree
-- Fitur .cekjid untuk cek JID
+### Owner Tidak Terdeteksi
 
-========================================
-LISENSI
-========================================
+1. Jalankan `.cekjid`
+2. Cocokkan dengan `owners.json`
+3. Daftarkan ulang owner
 
-MIT License - Free for educational purposes
+---
 
-========================================
-DEVELOPER
-========================================
+## 📌 Catatan
 
-Nama   : Rafi
-Sekolah: SMK TKJ
-GitHub : https://github.com/Z8Sa
+* Bot hanya merespon command yang diawali `.`
+* Data tersimpan permanen
+* Mendukung WhatsApp Multi Device
+* Tetap berjalan meskipun AI gagal
 
-========================================
-  Made with ❤️ for SMK TKJ students
-========================================
+---
+
+## 💾 Backup Database
+
+Backup:
+
+```bash
+copy database.json backup_db.json
+copy owners.json backup_owners.json
+```
+
+Restore:
+
+```bash
+copy backup_db.json database.json
+copy backup_owners.json owners.json
+```
+
+---
+
+## 🆕 Update Terbaru
+
+* Multi Owner Support
+* AI Groq Integration
+* Penyimpanan Owner Permanen
+* Tampilan Menu Lebih Rapi
+* Fitur `.cekjid`
+
+---
+
+## 📜 Lisensi
+
+MIT License
+
+---
+
+## 👨‍💻 Developer
+
+**Rafi**
+SMK TKJ
+
+GitHub: https://github.com/Z8Sa
+
+---
+
+⭐ Jika project ini membantu, berikan star pada repository.
