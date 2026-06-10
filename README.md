@@ -34,7 +34,7 @@ Bot WhatsApp untuk menyimpan materi dan tugas sekolah dengan dukungan AI, pencar
 * TKJ
 * Sejarah
 * Tahfidz
-* Database
+* sbd
 * PAI
 * PJOK
 * PPKn
